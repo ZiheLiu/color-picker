@@ -33,6 +33,9 @@
     "precommit": "lint-staged",
     "prepublish": "npm run lint:ts && npm run build"
   },
+  "dependencies": {
+    "classnames": "^2.2.5"
+  },
   "typings": "lib/index.d.ts",
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.11",

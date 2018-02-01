@@ -1,3 +1,3 @@
-import Test from './Test';
+import GridForBrightnessAndSaturation from './GridForBrightnessAndSaturation';
 
-export default Test;
+export default GridForBrightnessAndSaturation;
