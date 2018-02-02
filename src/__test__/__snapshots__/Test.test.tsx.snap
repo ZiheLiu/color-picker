@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text of Test should be correct 1`] = `
+<div
+  className="cp-panel"
+  onMouseDown={[Function]}
+  style={
+    Object {
+      "background": "#ff0000",
+      "height": 300,
+      "width": 300,
+    }
+  }
+>
+  <div
+    className="cp-panel-saturation-layer"
+  />
+  <div
+    className="cp-panel-brightness-layer"
+  />
+</div>
+`;

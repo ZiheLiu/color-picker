@@ -1,3 +1,3 @@
-import GridForBrightnessAndSaturation from './GridForBrightnessAndSaturation';
+import BoardForBrightnessAndSaturation from './BoardForBrightnessAndSaturation';
 
-export default GridForBrightnessAndSaturation;
+export default BoardForBrightnessAndSaturation;
