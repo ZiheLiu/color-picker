@@ -20,7 +20,7 @@ class TestBoard extends React.Component<{}, TestBoardState> {
     this.setState({
       color,
     });
-  };
+  }
 
   render() {
     const { color } = this.state;
