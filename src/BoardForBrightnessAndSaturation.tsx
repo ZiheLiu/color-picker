@@ -1,6 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import addEventListener from 'add-dom-event-listener';
+import * as addEventListener from 'add-dom-event-listener';
 
 import { Prefix } from './utils/const';
 import Color from './utils/Color';
@@ -25,6 +24,7 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
 
   moveListener: any = null;
   upListener: any = null;
+  domNode: HTMLDivElement;
 
   handleMouseDown = () => {
     this.moveListener = addEventListener(
@@ -48,14 +48,16 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
   removeListener = () => {
     if (this.moveListener) {
       this.moveListener.remove();
+      this.moveListener = null;
     }
     if (this.upListener) {
       this.upListener.remove();
+      this.upListener = null;
     }
   }
 
   pointMoveTo = (pos: Position) => {
-    const rect = ReactDOM.findDOMNode(this).getBoundingClientRect();
+    const rect = this.domNode.getBoundingClientRect();
     let left = pos.x - rect.left;
     let bottom = rect.bottom - pos.y;
 
@@ -71,6 +73,10 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
     newColor.brightness = bottom / maxHeight;
 
     onChange(newColor);
+  }
+
+  saveDomNode = (node: HTMLDivElement) => {
+    this.domNode = node;
   }
 
   componentWillUnmount() {
@@ -100,6 +106,7 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
         style={panelStyle}
         className={panelClass}
         onMouseDown={this.handleMouseDown}
+        ref={this.saveDomNode}
       >
         <div className={saturationClass} />
         <div className={brightnessClass} />

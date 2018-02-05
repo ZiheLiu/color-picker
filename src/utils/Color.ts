@@ -9,6 +9,7 @@ interface Hsv {
 class Color {
   color = TinyColor('blue');
 
+  // color will be #000 if input is illegal
   constructor(input: string | Hsv) {
     this.color = TinyColor(input);
   }
