@@ -67,7 +67,6 @@
     "less-loader": "^4.0.5",
     "lint-staged": "^6.1.0",
     "prettier": "1.10.2",
-    "prettier-tslint": "^0.3.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-test-renderer": "^16.2.0",
@@ -91,7 +90,8 @@
   },
   "prettier": {
     "printWidth": 80,
-    "singleQuote": true
+    "singleQuote": true,
+    "semi": true
   },
   "jest": {
     "transform": {

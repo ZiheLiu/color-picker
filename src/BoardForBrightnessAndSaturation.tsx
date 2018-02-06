@@ -33,17 +33,17 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
       this.handleMouseMove
     );
     this.upListener = addEventListener(window, 'mouseup', this.handleMouseUp);
-  }
+  };
 
   handleMouseMove = (e: any) => {
     const x = e.clientX;
     const y = e.clientY;
     this.pointMoveTo({ x, y });
-  }
+  };
 
   handleMouseUp = () => {
     this.removeListener();
-  }
+  };
 
   removeListener = () => {
     if (this.moveListener) {
@@ -54,7 +54,7 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
       this.upListener.remove();
       this.upListener = null;
     }
-  }
+  };
 
   pointMoveTo = (pos: Position) => {
     const rect = this.domNode.getBoundingClientRect();
@@ -73,11 +73,11 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
     newColor.brightness = bottom / maxHeight;
 
     onChange(newColor);
-  }
+  };
 
   saveDomNode = (node: HTMLDivElement) => {
     this.domNode = node;
-  }
+  };
 
   componentWillUnmount() {
     this.removeListener();
