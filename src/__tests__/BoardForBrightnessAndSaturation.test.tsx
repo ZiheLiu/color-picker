@@ -48,7 +48,7 @@ describe('BoardForBrightnessAndSaturation', function() {
       <BoardForBrightnessAndSaturation
         color={color}
         onChange={onChange}
-        width={size}
+        size={size}
       />
     );
 
@@ -88,7 +88,7 @@ describe('BoardForBrightnessAndSaturation', function() {
       <BoardForBrightnessAndSaturation
         color={color}
         onChange={onChange}
-        width={size}
+        size={size}
       />
     );
 

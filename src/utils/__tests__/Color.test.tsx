@@ -25,7 +25,11 @@ describe('Color', () => {
   });
 
   it('new Color([illegal object])', () => {
-    const color = new Color({});
+    const color = new Color({
+      h: -1,
+      s: -1,
+      v: -1
+    });
     expect(getHexValue(color)).toBe('000000');
   });
 
