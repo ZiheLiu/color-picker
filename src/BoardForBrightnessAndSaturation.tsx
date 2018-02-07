@@ -4,14 +4,14 @@ import * as addEventListener from 'add-dom-event-listener';
 import { Prefix } from './utils/const';
 import Color from './utils/Color';
 
-interface PanelProps {
+export interface PanelProps {
   size?: number;
   prefix?: string;
   color: Color;
   onChange: (color: Color) => void;
 }
 
-interface Position {
+export interface Position {
   x: number;
   y: number;
 }

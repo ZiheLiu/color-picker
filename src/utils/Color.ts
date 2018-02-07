@@ -1,6 +1,6 @@
 import * as TinyColor from 'tinycolor2';
 
-interface Hsv {
+export interface Hsv {
   h: number;
   s: number;
   v: number;
