@@ -43,6 +43,9 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
   };
 
   handleMouseMove = (e: any) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     const x = e.clientX;
     const y = e.clientY;
     this.pointMoveTo({ x, y });

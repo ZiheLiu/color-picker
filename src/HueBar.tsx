@@ -40,6 +40,9 @@ class HueBar extends React.Component<HueBarProps, {}> {
   };
 
   handleMouseMove = (e: any) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     const x = e.clientX;
     this.pointMoveTo(x);
   };
