@@ -60,7 +60,22 @@ class TestHueBar extends React.Component<{}, TestHueBarState> {
 
   render() {
     const { color } = this.state;
-    return <HueBar color={color} onChange={this.handleChange} />;
+    return (
+      <div>
+        <div>
+          color: {color.hex}
+          <span
+            style={{
+              display: 'inline-block',
+              background: color.hexString,
+              width: 50,
+              height: 10,
+            }}
+          />
+        </div>
+        <HueBar color={color} onChange={this.handleChange} />
+      </div>
+    );
   }
 }
 

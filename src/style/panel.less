@@ -2,6 +2,8 @@
 
 @panel-prefix: ~"@{cp-prefix}-panel";
 @panel-board-prefix: ~"@{cp-prefix}-panel-board";
+@panel-bar-prefix: ~"@{cp-prefix}-panel-hue-bar";
+
 @panel-pointer-color: #fff;
 
 .@{panel-board-prefix} {
@@ -37,5 +39,19 @@
     background: transparent;
     border: 1px solid @panel-pointer-color;
     border-radius: 50%;
+  }
+}
+
+.@{panel-bar-prefix} {
+  position: relative;
+
+  .@{panel-bar-prefix}-mover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: @panel-pointer-color;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: col-resize;
   }
 }
