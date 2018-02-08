@@ -22,7 +22,7 @@ class Color {
     const hsb = this.color.toHsv();
     this.color = TinyColor({
       ...hsb,
-      s: value
+      s: value,
     });
   }
 
@@ -30,7 +30,7 @@ class Color {
     const hsb = this.color.toHsv();
     this.color = TinyColor({
       ...hsb,
-      v: value
+      v: value,
     });
   }
 
@@ -38,7 +38,7 @@ class Color {
     const hsb = this.color.toHsv();
     this.color = TinyColor({
       ...hsb,
-      h: value
+      h: value,
     });
   }
 

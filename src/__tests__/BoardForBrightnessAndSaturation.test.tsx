@@ -24,7 +24,7 @@ describe('BoardForBrightnessAndSaturation', function() {
     let color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     const handleChange = jest.fn();
     const wrapper = render(
@@ -37,7 +37,7 @@ describe('BoardForBrightnessAndSaturation', function() {
     let color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     const onChange = (c: Color) => {
       color = c;
@@ -58,11 +58,11 @@ describe('BoardForBrightnessAndSaturation', function() {
       top: 0,
       bottom: size,
       left: 0,
-      right: size
+      right: size,
     };
     const pos = {
       clientX: 10,
-      clientY: 10
+      clientY: 10,
     };
     const newColor = getColorByPos(color, pos, size);
 
@@ -77,7 +77,7 @@ describe('BoardForBrightnessAndSaturation', function() {
     let color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     const onChange = (c: Color) => {
       color = c;
@@ -98,11 +98,11 @@ describe('BoardForBrightnessAndSaturation', function() {
       top: 0,
       bottom: size,
       left: 0,
-      right: size
+      right: size,
     };
     const pos = {
       clientX: 10,
-      clientY: 10
+      clientY: 10,
     };
 
     const newColor = getColorByPos(color, pos, size);
@@ -118,7 +118,7 @@ describe('BoardForBrightnessAndSaturation', function() {
     let color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     const onChange = jest.fn();
 
@@ -139,7 +139,7 @@ describe('BoardForBrightnessAndSaturation', function() {
     let color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     const onChange = jest.fn();
 
@@ -161,7 +161,7 @@ describe('BoardForBrightnessAndSaturation', function() {
     let color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     const onChange = jest.fn();
 

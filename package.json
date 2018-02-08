@@ -30,6 +30,8 @@
     "build-storybook": "build-storybook",
     "lint:ts":
       "tsc --project ./stories/tsconfig.json && tslint --project ./stories/tsconfig.json --config tslint.json",
+    "lint:fix":
+      "tslint --project ./stories/tsconfig.json --config tslint.json --fix",
     "precommit": "lint-staged",
     "prepublish": "npm run lint:ts && npm run build"
   },
@@ -91,7 +93,8 @@
   "prettier": {
     "printWidth": 80,
     "singleQuote": true,
-    "semi": true
+    "semi": true,
+    "trailingComma": "es5"
   },
   "jest": {
     "transform": {

@@ -14,7 +14,7 @@ describe('Color', () => {
     const color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     expect(color.color.toHex()).toBe('ff0000');
   });
@@ -28,7 +28,7 @@ describe('Color', () => {
     const color = new Color({
       h: -1,
       s: -1,
-      v: -1
+      v: -1,
     });
     expect(getHexValue(color)).toBe('000000');
   });
@@ -45,14 +45,14 @@ describe('Color', () => {
     const color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     color.saturation = 0.5;
 
     const newColor = new Color({
       h: 0,
       s: 0.5,
-      v: 1
+      v: 1,
     });
 
     expect(getHexValue(color)).toBe(getHexValue(newColor));
@@ -62,14 +62,14 @@ describe('Color', () => {
     const color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     color.brightness = 0.5;
 
     const newColor = new Color({
       h: 0,
       s: 1,
-      v: 0.5
+      v: 0.5,
     });
 
     expect(getHexValue(color)).toBe(getHexValue(newColor));
@@ -79,14 +79,14 @@ describe('Color', () => {
     const color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     color.hue = 10;
 
     const newColor = new Color({
       h: 10,
       s: 1,
-      v: 1
+      v: 1,
     });
 
     expect(getHexValue(color)).toBe(getHexValue(newColor));
@@ -96,7 +96,7 @@ describe('Color', () => {
     const color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     expect(color.hue).toBe(0);
   });
@@ -105,7 +105,7 @@ describe('Color', () => {
     const color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     expect(color.hex).toBe(getHexValue(color));
   });
@@ -114,7 +114,7 @@ describe('Color', () => {
     const color = new Color({
       h: 0,
       s: 1,
-      v: 1
+      v: 1,
     });
     expect(color.hexString).toBe(`#${getHexValue(color)}`);
   });

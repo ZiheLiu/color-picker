@@ -19,7 +19,7 @@ export interface Position {
 class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
   static defaultProps = {
     size: 300,
-    prefix: `${Prefix}-panel`
+    prefix: `${Prefix}-panel`,
   };
 
   moveListener: any = null;
@@ -32,6 +32,7 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
       'mousemove',
       this.handleMouseMove
     );
+
     this.upListener = addEventListener(window, 'mouseup', this.handleMouseUp);
   };
 
@@ -89,13 +90,13 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
     const hueColor = new Color({
       h: color.hue,
       s: 1,
-      v: 1
+      v: 1,
     });
 
     const panelStyle = {
       width: size,
       height: size,
-      background: `#${hueColor.hex}`
+      background: `#${hueColor.hex}`,
     };
     const panelClass = prefix;
     const saturationClass = `${prefix}-saturation-layer`;
