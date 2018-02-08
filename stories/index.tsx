@@ -7,6 +7,8 @@ import Color from '../src/utils/Color';
 
 import Board from '../src';
 
+import '../src/style/index.less';
+
 interface TestBoardState {
   color: Color;
 }
