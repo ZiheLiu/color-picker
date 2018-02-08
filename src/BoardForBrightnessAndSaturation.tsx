@@ -25,7 +25,7 @@ export interface Position {
 class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
   static defaultProps = {
     size: PanelSize,
-    prefix: `${Prefix}-panel`,
+    prefix: `${Prefix}-panel-board`,
   };
 
   moveListener: any = null;

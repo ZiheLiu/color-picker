@@ -1,9 +1,10 @@
 @import './common';
 
 @panel-prefix: ~"@{cp-prefix}-panel";
+@panel-board-prefix: ~"@{cp-prefix}-panel-board";
 @panel-pointer-color: #fff;
 
-.@{panel-prefix} {
+.@{panel-board-prefix} {
   position: relative;
   cursor: crosshair;
 
@@ -15,21 +16,21 @@
     right: 0;
   }
 
-  .@{panel-prefix}-saturation-layer {
+  .@{panel-board-prefix}-saturation-layer {
     .panel-prefix-child-position();
 
     z-index: 1;
     background: linear-gradient(to right, white, transparent);
   }
 
-  .@{panel-prefix}-brightness-layer {
+  .@{panel-board-prefix}-brightness-layer {
     .panel-prefix-child-position();
 
     z-index: 2;
     background: linear-gradient(to top, black, transparent);
   }
 
-  .@{panel-prefix}-pointer {
+  .@{panel-board-prefix}-pointer {
     position: absolute;
 
     z-index: 3;
