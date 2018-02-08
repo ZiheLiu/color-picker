@@ -3,6 +3,7 @@ import * as addEventListener from 'add-dom-event-listener';
 
 import { Prefix } from './utils/const';
 import Color from './utils/Color';
+import { PanelSize } from './utils/const';
 
 // const
 const POINTER_SIZE = 10;
@@ -23,7 +24,7 @@ export interface Position {
 // BoardForBrightnessAndSaturation
 class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
   static defaultProps = {
-    size: 300,
+    size: PanelSize,
     prefix: `${Prefix}-panel`,
   };
 
