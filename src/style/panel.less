@@ -1,9 +1,11 @@
 @import './common';
 
 @panel-prefix: ~"@{cp-prefix}-panel";
+@panel-pointer-color: #fff;
 
 .@{panel-prefix} {
   position: relative;
+  cursor: crosshair;
 
   .panel-prefix-child-position() {
     position: absolute;
@@ -25,5 +27,14 @@
 
     z-index: 2;
     background: linear-gradient(to top, black, transparent);
+  }
+
+  .@{panel-prefix}-pointer {
+    position: absolute;
+
+    z-index: 3;
+    background: transparent;
+    border: 1px solid @panel-pointer-color;
+    border-radius: 50%;
   }
 }

@@ -58,6 +58,15 @@ describe('Color', () => {
     expect(getHexValue(color)).toBe(getHexValue(newColor));
   });
 
+  it('get saturation correctly', () => {
+    const color = new Color({
+      h: 0,
+      s: 1,
+      v: 1,
+    });
+    expect(color.saturation).toBe(1);
+  });
+
   it('set brightness correctly', () => {
     const color = new Color({
       h: 0,
@@ -73,6 +82,15 @@ describe('Color', () => {
     });
 
     expect(getHexValue(color)).toBe(getHexValue(newColor));
+  });
+
+  it('get brightness correctly', () => {
+    const color = new Color({
+      h: 0,
+      s: 1,
+      v: 1,
+    });
+    expect(color.brightness).toBe(1);
   });
 
   it('set hue correctly', () => {

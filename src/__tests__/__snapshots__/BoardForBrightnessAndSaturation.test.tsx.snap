@@ -11,5 +11,9 @@ exports[`BoardForBrightnessAndSaturation render correctly 1`] = `
   <div
     class="cp-panel-brightness-layer"
   />
+  <div
+    class="cp-panel-pointer"
+    style="bottom:calc(100% - 10px);left:calc(100% - 10px);width:10px;height:10px"
+  />
 </div>
 `;

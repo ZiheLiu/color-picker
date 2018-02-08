@@ -26,12 +26,22 @@ class Color {
     });
   }
 
+  get saturation() {
+    const hsb = this.color.toHsv();
+    return hsb.s;
+  }
+
   set brightness(value: number) {
     const hsb = this.color.toHsv();
     this.color = TinyColor({
       ...hsb,
       v: value,
     });
+  }
+
+  get brightness() {
+    const hsb = this.color.toHsv();
+    return hsb.v;
   }
 
   set hue(value: number) {

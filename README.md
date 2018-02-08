@@ -9,7 +9,7 @@ The demo based on storybook is [here][1].
 ## Todo
 - [ ] hue bar to set hue value
 - [ ] preview of current color
-- [ ] show mouse point on BoardForBrightnessAndSaturation
+- [x] show mouse point on BoardForBrightnessAndSaturation
 - [ ] export common color-picker
 
 

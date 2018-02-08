@@ -4,6 +4,10 @@ import * as addEventListener from 'add-dom-event-listener';
 import { Prefix } from './utils/const';
 import Color from './utils/Color';
 
+// const
+const POINTER_SIZE = 10;
+
+// type
 export interface PanelProps {
   size?: number;
   prefix?: string;
@@ -16,6 +20,7 @@ export interface Position {
   y: number;
 }
 
+// BoardForBrightnessAndSaturation
 class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
   static defaultProps = {
     size: 300,
@@ -93,6 +98,8 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
       v: 1,
     });
 
+    const { saturation, brightness } = color;
+
     const panelStyle = {
       width: size,
       height: size,
@@ -101,6 +108,13 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
     const panelClass = prefix;
     const saturationClass = `${prefix}-saturation-layer`;
     const brightnessClass = `${prefix}-brightness-layer`;
+    const pointerStyle = {
+      bottom: `calc(${brightness * 100}% - ${POINTER_SIZE}px)`,
+      left: `calc(${saturation * 100}% - ${POINTER_SIZE}px)`,
+      width: POINTER_SIZE,
+      height: POINTER_SIZE,
+    };
+    const pointerClass = `${prefix}-pointer`;
 
     return (
       <div
@@ -111,6 +125,7 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
       >
         <div className={saturationClass} />
         <div className={brightnessClass} />
+        <div style={pointerStyle} className={pointerClass} />
       </div>
     );
   }
