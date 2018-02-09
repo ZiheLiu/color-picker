@@ -8,41 +8,31 @@ export interface Hsv {
 }
 
 class Color {
-  color = TinyColor('blue');
+  color: any;
+
+  hueValue: number;
+  saturationValue: number;
+  brightnessValue: number;
 
   // color will be #000 if input is illegal
   constructor(input: string | Hsv) {
     this.color = TinyColor(input);
+    this.initHSB();
+  }
+
+  initHSB() {
+    const { h, s, v } = this.color.toHsv();
+    this.hueValue = h;
+    this.saturationValue = s;
+    this.brightnessValue = v;
   }
 
   copy() {
-    return new Color(this.color);
-  }
-
-  set saturation(value: number) {
-    const hsb = this.color.toHsv();
-    this.color = TinyColor({
-      ...hsb,
-      s: value,
-    });
-  }
-
-  get saturation() {
-    const hsb = this.color.toHsv();
-    return hsb.s;
-  }
-
-  set brightness(value: number) {
-    const hsb = this.color.toHsv();
-    this.color = TinyColor({
-      ...hsb,
-      v: value,
-    });
-  }
-
-  get brightness() {
-    const hsb = this.color.toHsv();
-    return hsb.v;
+    const newColor = new Color(this.color);
+    newColor.hueValue = this.hueValue;
+    newColor.saturationValue = this.saturationValue;
+    newColor.brightnessValue = this.brightnessValue;
+    return newColor;
   }
 
   set hue(value: number) {
@@ -51,11 +41,40 @@ class Color {
       ...hsb,
       h: value,
     });
+
+    this.hueValue = value;
   }
 
   get hue() {
+    return this.hueValue;
+  }
+
+  set saturation(value: number) {
     const hsb = this.color.toHsv();
-    return hsb.h;
+    this.color = TinyColor({
+      ...hsb,
+      s: value,
+    });
+
+    this.saturationValue = value;
+  }
+
+  get saturation() {
+    return this.saturationValue;
+  }
+
+  set brightness(value: number) {
+    const hsb = this.color.toHsv();
+    this.color = TinyColor({
+      ...hsb,
+      v: value,
+    });
+
+    this.brightnessValue = value;
+  }
+
+  get brightness() {
+    return this.brightnessValue;
   }
 
   set alpha(value: number) {

@@ -5,6 +5,7 @@
 @panel-bar-prefix: ~"@{panel-prefix}-bar";
 @panel-operation-bar-prefix: ~"@{panel-prefix}-operation-bar";
 @panel-preview-prefix: ~"@{panel-prefix}-preview";
+@panel-params: ~"@{panel-prefix}-params";
 
 @panel-pointer-color: #fff;
 
@@ -98,3 +99,34 @@
     opacity: 0;
   }
 }
+
+.input-width(@lgWidth, @smTotal) {
+  .input-text {
+    width: @lgWidth;
+  }
+
+  .input-number {
+    width: (100% - @lgWidth) / @smTotal - 2%;
+    margin-left: 2%;
+  }
+}
+
+.@{panel-params} {
+  .@{panel-params}-input {
+    input {
+      box-sizing: border-box;
+      display: inline-block;
+      padding: 0;
+      text-align: center;
+      -webkit-appearance: textfield;
+    }
+
+    .input-width(30%, 4);
+
+    &.@{panel-params}-input-no-alpha {
+      .input-width(30%, 3);
+    }
+  }
+}
+
+

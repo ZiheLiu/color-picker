@@ -8,6 +8,7 @@ import BoardForBS from '../src/BoardForBrightnessAndSaturation';
 import HueBar from '../src/HueBar';
 import Preview from '../src/Preview';
 import AlphaBar from '../src/AlphaBar';
+import Params from '../src/Params';
 
 import '../src/style/index.less';
 
@@ -84,9 +85,16 @@ const TestPreview = withColor(
     </div>
   )
 );
+// Params
+const TestParams = withColor(({ color, onChange }: WithColorComponentProps) => (
+  <div style={{ width: 200 }}>
+    <Params color={color} onChange={onChange} />
+  </div>
+));
 
 storiesOf('SingleComponent', module)
   .add('BoardForBrightnessAndSaturation', () => <TestBoard />)
   .add('HueBar', () => <TestHueBar />)
   .add('Alpha', () => <TestAlpha />)
-  .add('Preview', () => <TestPreview />);
+  .add('Preview', () => <TestPreview />)
+  .add('Params', () => <TestParams />);

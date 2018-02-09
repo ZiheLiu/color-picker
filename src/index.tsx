@@ -1,3 +1,3 @@
-import BoardForBrightnessAndSaturation from './BoardForBrightnessAndSaturation';
+import Panel from './Panel';
 
-export default BoardForBrightnessAndSaturation;
+export default Panel;
