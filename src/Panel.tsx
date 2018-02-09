@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import BoardForBrightnessAndSaturation from './BoardForBrightnessAndSaturation';
 import HueBar from './HueBar';
+import AlphaBar from './AlphaBar';
 import Preview from './Preview';
 
 import Color from './utils/Color';
@@ -42,7 +43,7 @@ class Panel extends React.Component<PanelProps, PanelState> {
     const hueBarStyle = {
       width: '100%',
     };
-    const hueBar2Style = {
+    const alphaBarStyle = {
       width: '100%',
       marginTop: 6,
     };
@@ -65,10 +66,10 @@ class Panel extends React.Component<PanelProps, PanelState> {
               onChange={this.handleColorChange}
               style={hueBarStyle}
             />
-            <HueBar
+            <AlphaBar
               color={color}
               onChange={this.handleColorChange}
-              style={hueBar2Style}
+              style={alphaBarStyle}
             />
           </div>
           <div className={barPreviewClass}>
