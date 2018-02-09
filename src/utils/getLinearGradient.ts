@@ -1,6 +1,12 @@
 import Color from './Color';
 
+let linearGradientCache: string;
+
 export default function getLinearGradient() {
+  if (linearGradientCache) {
+    return linearGradientCache;
+  }
+
   const colors = [];
   for (let i = 0; i <= 360; i += 10) {
     const color = new Color({
@@ -17,5 +23,7 @@ export default function getLinearGradient() {
     ''
   );
 
-  return `linear-gradient(to right${colorString})`;
+  linearGradientCache = `linear-gradient(to right${colorString})`;
+
+  return linearGradientCache;
 }
