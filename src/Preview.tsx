@@ -25,8 +25,10 @@ class Preview extends React.Component<PreviewProps, {}> {
     const { color, prefix } = this.props;
 
     const colorHexString = color.hexString;
+    const alpha = color.alpha;
     const divStyle = {
       background: colorHexString,
+      opacity: alpha,
     };
     const wrapperClass = `${prefix}-panel-preview`;
 
