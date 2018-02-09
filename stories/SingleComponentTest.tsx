@@ -7,6 +7,7 @@ import Color from '../src/utils/Color';
 import BoardForBS from '../src/BoardForBrightnessAndSaturation';
 import HueBar from '../src/HueBar';
 import Preview from '../src/Preview';
+import AlphaBar from '../src/AlphaBar';
 
 import '../src/style/index.less';
 
@@ -65,6 +66,16 @@ function withColor(
 const TestBoard = withColor(BoardForBS);
 // HueBar
 const TestHueBar = withColor(HueBar);
+// AlphaBar
+const TestAlpha = withColor(({ color, onChange }: WithColorComponentProps) => (
+  <div>
+    <div>
+      <label>alpha: </label>
+      <span>{color.alpha}</span>
+    </div>
+    <AlphaBar color={color} onChange={onChange} />
+  </div>
+));
 // Preview
 const TestPreview = withColor(
   ({ color, onChange }: WithColorComponentProps) => (
@@ -77,4 +88,5 @@ const TestPreview = withColor(
 storiesOf('SingleComponent', module)
   .add('BoardForBrightnessAndSaturation', () => <TestBoard />)
   .add('HueBar', () => <TestHueBar />)
+  .add('Alpha', () => <TestAlpha />)
   .add('Preview', () => <TestPreview />);

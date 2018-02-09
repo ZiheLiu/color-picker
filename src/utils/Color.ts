@@ -4,6 +4,7 @@ export interface Hsv {
   h: number;
   s: number;
   v: number;
+  a?: number;
 }
 
 class Color {
@@ -55,6 +56,19 @@ class Color {
   get hue() {
     const hsb = this.color.toHsv();
     return hsb.h;
+  }
+
+  set alpha(value: number) {
+    const hsb = this.color.toHsv();
+    this.color = TinyColor({
+      ...hsb,
+      a: value,
+    });
+  }
+
+  get alpha() {
+    const hsb = this.color.toHsv();
+    return hsb.a;
   }
 
   get hex() {
