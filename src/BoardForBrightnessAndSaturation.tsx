@@ -113,8 +113,8 @@ class BoardForBrightnessAndSaturation extends React.Component<PanelProps, {}> {
     const saturationClass = `${prefix}-saturation-layer`;
     const brightnessClass = `${prefix}-brightness-layer`;
     const pointerStyle = {
-      bottom: `calc(${brightness * 100}% - ${POINTER_SIZE}px)`,
-      left: `calc(${saturation * 100}% - ${POINTER_SIZE}px)`,
+      bottom: `calc(${brightness * 100}% - ${POINTER_SIZE / 2}px)`,
+      left: `calc(${saturation * 100}% - ${POINTER_SIZE / 2}px)`,
       width: POINTER_SIZE,
       height: POINTER_SIZE,
     };
