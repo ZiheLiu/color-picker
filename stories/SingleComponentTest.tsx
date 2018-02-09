@@ -6,79 +6,75 @@ import Color from '../src/utils/Color';
 
 import BoardForBS from '../src/BoardForBrightnessAndSaturation';
 import HueBar from '../src/HueBar';
+import Preview from '../src/Preview';
 
 import '../src/style/index.less';
 
-interface TestBoardState {
+// WithColor
+interface WithColorComponentProps {
+  color: Color;
+  onChange: (color: Color) => void;
+  [keyName: string]: any;
+}
+
+interface WithColorState {
   color: Color;
 }
 
-class TestBoard extends React.Component<{}, TestBoardState> {
-  state = {
-    color: new Color({ h: 10, s: 1, v: 1 }),
-  };
+function withColor(
+  component:
+    | React.ComponentClass<WithColorComponentProps>
+    | React.SFC<WithColorComponentProps>
+) {
+  return class WithColor extends React.Component<{}, WithColorState> {
+    state = {
+      color: new Color({ h: 10, s: 1, v: 1 }),
+    };
 
-  handleColorChange = (color: Color) => {
-    this.setState({
-      color,
-    });
-  };
+    handleColorChange = (color: Color) => {
+      this.setState({
+        color,
+      });
+    };
 
-  render() {
-    const { color } = this.state;
-    return (
-      <div>
+    render() {
+      const { color } = this.state;
+      const C = component;
+
+      return (
         <div>
-          color: {color.hex}
-          <span
-            style={{
-              display: 'inline-block',
-              background: color.hexString,
-              width: 50,
-              height: 10,
-            }}
-          />
+          <div>
+            color: {color.hex}
+            <span
+              style={{
+                display: 'inline-block',
+                background: color.hexString,
+                width: 50,
+                height: 10,
+              }}
+            />
+          </div>
+          <C color={color} onChange={this.handleColorChange} />
         </div>
-        <BoardForBS color={color} onChange={this.handleColorChange} />
-      </div>
-    );
-  }
-}
-
-interface TestHueBarState {
-  color: Color;
-}
-
-class TestHueBar extends React.Component<{}, TestHueBarState> {
-  state = {
-    color: new Color({ h: 10, s: 1, v: 1 }),
+      );
+    }
   };
-
-  handleChange = (color: Color) => {
-    this.setState({ color });
-  };
-
-  render() {
-    const { color } = this.state;
-    return (
-      <div>
-        <div>
-          color: {color.hex}
-          <span
-            style={{
-              display: 'inline-block',
-              background: color.hexString,
-              width: 50,
-              height: 10,
-            }}
-          />
-        </div>
-        <HueBar color={color} onChange={this.handleChange} />
-      </div>
-    );
-  }
 }
+
+// BoardForBS
+const TestBoard = withColor(BoardForBS);
+// HueBar
+const TestHueBar = withColor(HueBar);
+// Preview
+const TestPreview = withColor(
+  ({ color, onChange }: WithColorComponentProps) => (
+    <div style={{ width: 20, height: 20 }}>
+      <Preview color={color} onChange={onChange} />
+    </div>
+  )
+);
 
 storiesOf('SingleComponent', module)
   .add('BoardForBrightnessAndSaturation', () => <TestBoard />)
-  .add('HueBar', () => <TestHueBar />);
+  .add('HueBar', () => <TestHueBar />)
+  .add('Preview', () => <TestPreview />);

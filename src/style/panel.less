@@ -1,10 +1,13 @@
 @import './common';
 
 @panel-prefix: ~"@{cp-prefix}-panel";
-@panel-board-prefix: ~"@{cp-prefix}-panel-board";
-@panel-bar-prefix: ~"@{cp-prefix}-panel-hue-bar";
+@panel-board-prefix: ~"@{panel-prefix}-board";
+@panel-bar-prefix: ~"@{panel-prefix}-bar";
+@panel-hue-bar-prefix: ~"@{panel-prefix}-hue-bar";
+@panel-preview-prefix: ~"@{panel-prefix}-preview";
 
 @panel-pointer-color: #fff;
+
 
 .@{panel-board-prefix} {
   position: relative;
@@ -44,8 +47,26 @@
 
 .@{panel-bar-prefix} {
   position: relative;
+  margin-top: 6px;
 
-  .@{panel-bar-prefix}-mover {
+  .@{panel-bar-prefix}-editor {
+    margin-right: 2%;
+    width: 80%;
+  }
+  .@{panel-bar-prefix}-preview {
+    // set height equal to parent
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 18%;
+  }
+}
+
+.@{panel-hue-bar-prefix} {
+  position: relative;
+
+  .@{panel-hue-bar-prefix}-mover {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -53,5 +74,27 @@
     border-radius: 5px;
     border: 1px solid black;
     cursor: col-resize;
+  }
+}
+
+.@{panel-preview-prefix} {
+  position: relative;
+  height: 100%;
+
+
+  >div {
+    background: red;
+    height: 100%;
+  }
+
+  >input[type=color] {
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    opacity: 0;
   }
 }
